@@ -1,0 +1,411 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+hr {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    height: 0;
+}
+
+/*Header com logo e redes sociais**/
+header {
+    background-color: rgb(44, 41, 41);
+    padding: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    color: white;
+    padding: 0 20px
+}
+
+#logo {
+    margin-left: 3px;
+
+}
+
+/*Menu**/
+nav {
+    background-color: #383838;
+    color: #fff;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    margin: 0 10px;
+    position: relative;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0 10px;
+    line-height: 50px;
+}
+
+nav a:hover {
+    display: flex;
+    background-color: #555;
+}
+
+ul ul {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    background-color: #383838;
+    display: none;
+    z-index: 999;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+    padding: 8px;
+}
+
+li:hover>ul {
+    display: block;
+    
+}
+
+ul ul li {
+    margin: 0;
+    border-top: 1px solid #777;
+    
+}
+
+ul ul li:first-child {
+    border-top: none;
+}
+
+ul ul a {
+    line-height: 2.3em;
+    align-items: center;
+    padding: 0;
+}
+
+#input1{
+    display: flex;
+    padding: 12px;
+    font-weight: bold;
+}
+
+#input1 input{
+    font-weight: bold;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+
+/**Slider Principal*/
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin-top: 5px;
+}
+
+.slide-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+    width: 100%;
+}
+
+.slide-list {
+    display: flex;
+}
+
+.slide-item {
+    cursor: grab;
+    flex-shrink: 0;
+    padding: 0 10px;
+    width: 80%;
+}
+
+.slide-content {
+    border-radius: 10px;
+    border: 1px solid #fff;
+    box-shadow: #444 0px 7px 10px;
+    position: relative;
+    
+}
+
+.slide-image {
+    border-radius: 10px;
+    width: 100%;
+}
+
+.slide-description {
+    border-radius: 10px;
+    background: linear-gradient(to top, #333, transparent);
+    color: #fff;
+    position: absolute;
+    padding: 30px;
+    bottom: 0;
+    width: 100%;
+}
+
+.slide-description h3 {
+    font-family: 'Koulen', sans-serif;
+    font-size: 42px;
+    position: relative;
+    top: 16px;
+    margin-bottom: 30px;
+}
+
+.slide-description p {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 24px;
+}
+
+.slide-nav-button {
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    font-size: 36px;
+    position: absolute;
+    z-index: 1;
+}
+
+.slide-nav-previous {
+    left: 20px;
+}
+
+.slide-nav-next {
+    right: 20px;
+}
+
+.slide-controls {
+    margin: 30px auto 0;
+}
+
+.slide-control-button {
+    color: #333;
+    cursor: pointer;
+    background: transparent;
+    font-size: 18px;
+    margin: 0 5px;
+}
+
+.slide-control-button.active {
+    color: #9C441B;
+}
+
+@media screen and (max-width: 768px) {
+    .slide-description {
+        padding: 10px;
+    }
+    
+    .slide-description h3 {
+        font-size: 24px;
+        top: 0;
+    }
+
+    .slide-description p {
+        display: none;
+    }
+
+    .slide-nav-button {
+        margin-top: -20px;
+        font-size: 28px;
+    }
+    
+    .slide-nav-previous {
+        left: 10px;
+    }
+    
+    .slide-nav-next {
+        right: 10px;
+    }
+
+    .slide-controls {
+        margin: 15px auto 0;
+    }
+
+    .slide-control-button {
+        font-size: 14px;
+    }
+}
+
+
+/*Slide "Destaques"*/
+
+.carousel-container {
+    margin-top: 50px;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.carousel-items {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(0%);
+    
+}
+
+.carousel-item {
+    flex: 1 0 33.33%;
+    text-align: center;
+    
+}
+
+.carousel-item a{
+    text-decoration: none;
+    color: #333;
+    
+}
+
+.carousel-prev,
+.carousel-next,
+.carousel-next1,
+.carousel-prev {
+    position: absolute;
+    top: 35%;
+    transform: translateY(-50%);
+    padding: 10px;
+    font-size: 18px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    width: 40px;
+}
+
+.carousel-prev {
+    left: 10px;
+    background: transparent;
+    color: rgb(44, 41, 41);
+    cursor: pointer;
+    font-size: 25px;
+    position: absolute;
+    z-index: 1;
+}
+
+.carousel-next {
+    right: 10px;
+    background: transparent;
+    color: rgb(44, 41, 41);
+    cursor: pointer;
+    font-size: 25px;
+    position: absolute;
+    z-index: 1;
+}
+
+#carousel1{
+    left: 50px;
+}
+#carousel2{
+    right: 50px;
+}
+
+#linha {
+    width: 70%;
+    border: 1px solid;
+}
+
+#det{
+    margin-left: 20px;
+    font-size: 30px;
+}
+
+
+
+/*Parte de Serviços*/
+  .legend {
+    background-color: rgb(44, 41, 41);
+    color: white;
+    padding: 10px;
+    text-align: center;
+  }
+  
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 800px;
+    margin: 0 auto;
+    color: #fff;
+    padding: 20px;
+  }
+
+  
+  .flex > div {
+    flex: 1 1 200px;
+    margin: 10px;
+    background-color: #333;
+    border-radius: 20px;
+    padding: 30px;
+    align-self: center;
+    text-align: center;
+  }
+
+.botaoM{
+    display: flex;
+    background-color: #555;
+    color: #fff;
+    padding: 11px;
+    border-radius: 8px;
+    text-decoration: none;
+    text-align: center;
+    float: right;
+    margin-right: 20px;
+}
+
+ /*Footer*/
+
+    
+  footer {
+    background-image: url('/assets/imgs/predio_degrade_2400x548.png');
+    background-size: cover;
+    color: white;  
+    display: flex; 
+    justify-content: space-between;
+    padding: 20px;
+  }
+
+  .column {
+    width: 25%;
+    float: left;
+    margin-right: 20px;
+    margin-top: 40px;
+    color: #fff;
+  }
+  
+  .column h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .column p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+  
+  .tirarDec{
+    color: #fff;
+  }
+  .tirarDec:hover{
+    color: gray;
+  }
